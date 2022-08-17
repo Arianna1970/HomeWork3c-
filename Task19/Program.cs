@@ -1,4 +1,4 @@
-﻿void PrintIfPalindrom(bool Yes) 
+﻿void PrintIfPalindrom(bool Yes ) 
 {
    if (Yes)
     System.Console.WriteLine("Да, это палиндром.");
@@ -7,7 +7,7 @@
 }     
 
 
-// программа работает со сторокой любой длины
+// программа работанет с любыми числами
 // для задачи используется  6значное число 
 bool IfPalindrom(int[] arr)
 { 
@@ -29,21 +29,43 @@ bool IfPalindrom(int[] arr)
 
      }
   
-  return Flag;
-}
+   return Flag;
 
+}
+// преобразование цифр десятичного числа в массив целых чисел 
 int[] NumberToArray(int number)
 {
-  int count =0;
-  
+ 
+  int TempNumber = number;
+  int Count=0;
+  // определим, сколько в числе разрядов
+  while ( TempNumber!=0 )
+  { 
+    TempNumber/=10;
+    Count++;
+  }    
+  int[] Arr= new int[Count];
 
+  while ( number!=0 )
+  { 
+    Arr[Count-1]=number%10;
+    number/=10;
+    Count--;
+  }    
+return Arr;
 }
+System.Console.WriteLine("135531 ?");
+PrintIfPalindrom(IfPalindrom(NumberToArray(135531)));
+System.Console.WriteLine("135431 ?");
+PrintIfPalindrom(IfPalindrom(NumberToArray(135431)));
+System.Console.WriteLine("125531 ?");
+PrintIfPalindrom(IfPalindrom(NumberToArray(125531)));
+System.Console.WriteLine("235531 ?");
+PrintIfPalindrom(IfPalindrom(NumberToArray(235531)));
 
-int[] NumberArray = new int[6];
+
 int Number;
 System.Console.Write("Введите 6-значное число :  ");
 Number = Convert.ToInt32(System.Console.ReadLine());
-if (Number.Length == 6)
-   PrintIfPalindrom(IfPalindrom(Number));
-else    
-   System.Console.Write("");
+PrintIfPalindrom(IfPalindrom(NumberToArray(Number)));
+
