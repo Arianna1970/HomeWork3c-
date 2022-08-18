@@ -1,6 +1,6 @@
 ﻿void PrintCubes(int N)
 {
-  System.Console.Write($"{N} =>");   
+  System.Console.Write($"{N} => ");   
   for (int i = 1; i <= N ; i++)
   {
       System.Console.Write($"{i*i*i}"); 

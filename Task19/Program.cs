@@ -1,4 +1,5 @@
-﻿void PrintIfPalindrom(bool Yes ) 
+﻿ 
+void PrintIfPalindrom(bool Yes ) 
 {
    if (Yes)
     System.Console.WriteLine("Да, это палиндром.");
@@ -20,11 +21,13 @@ bool IfPalindrom(int[] arr)
   if (shift == 0)
       even = 1;
   
-  while ( Flag & shift <= middle -even )
+  while (  shift <= middle -even )
      { 
       
         if ( arr[middle+shift]!=arr[middle-shift-even])
-           Flag = false;
+           { Flag = false;
+             break;
+           } 
         shift ++;   
 
      }
@@ -54,6 +57,7 @@ int[] NumberToArray(int number)
   }    
 return Arr;
 }
+// сначала проверим на фиксированных числах
 System.Console.WriteLine("135531 ?");
 PrintIfPalindrom(IfPalindrom(NumberToArray(135531)));
 System.Console.WriteLine("135431 ?");
@@ -66,6 +70,7 @@ PrintIfPalindrom(IfPalindrom(NumberToArray(235531)));
 
 int Number;
 System.Console.Write("Введите 6-значное число :  ");
+// но можно и любое
 Number = Convert.ToInt32(System.Console.ReadLine());
 PrintIfPalindrom(IfPalindrom(NumberToArray(Number)));
 
