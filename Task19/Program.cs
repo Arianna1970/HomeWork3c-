@@ -71,6 +71,6 @@ PrintIfPalindrom(IfPalindrom(NumberToArray(235531)));
 int Number;
 System.Console.Write("Введите 6-значное число :  ");
 // но можно и любое
-Number = Convert.ToInt32(System.Console.ReadLine());
+Number = System.Math.Abs(Convert.ToInt32(System.Console.ReadLine()));
 PrintIfPalindrom(IfPalindrom(NumberToArray(Number)));
 
